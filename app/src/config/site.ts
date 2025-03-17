@@ -28,6 +28,14 @@ export const siteConfig = {
       label: "Login",
       href: "/login",
     },
+    {
+      label: "Shop",
+      href: "/shop",
+    },
+    {
+      label: "Shopping Cart",
+      href: "/shopping-cart",
+    },
   ],
   navMenuItems: [
     {

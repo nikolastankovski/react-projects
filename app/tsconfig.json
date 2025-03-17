@@ -7,12 +7,14 @@
     "skipLibCheck": true,
     "paths": {
       "@/*": ["./src/*"],
-      "@/components/*": ["./src/components/*"],
+      "@components/*": ["./src/components/*"],
       "@/features/*": ["./src/features/*"],
       "@utils/*": ["./src/utils/*"],
       "@styles/*": ["./src/styles/*"],
       "@assets/*": ["./src/assets/*"],
-      "@pages/*": ["./src/pages/*"]
+      "@pages/*": ["./src/pages/*"],
+      "@data/*": ["./src/data/*"],
+      "@types/*": ["./src/types/*"]
     },
 
     /* Bundler mode */

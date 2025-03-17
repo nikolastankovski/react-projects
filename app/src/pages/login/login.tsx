@@ -3,7 +3,7 @@ import { Icon } from "@iconify/react";
 import React from "react";
 import DefaultLayout from "@/layouts/default";
 
-export default function App() {
+export default function LoginPage() {
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         console.log("Login submitted");

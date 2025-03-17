@@ -6,6 +6,8 @@ import PricingPage from "@/pages/pricing";
 import BlogPage from "@/pages/blog";
 import AboutPage from "@/pages/about";
 import LoginPage from "./pages/login/login";
+import ShopPage from "./pages/shop/shop";
+import ShoppingCartPage from "./pages/shopping-cart/shopping-cart";
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
       <Route element={<BlogPage />} path="/blog" />
       <Route element={<AboutPage />} path="/about" />
       <Route element={<LoginPage />} path="/login" />
+      <Route element={<ShopPage />} path="/shop" />
+      <Route element={<ShoppingCartPage />} path="/shopping-cart" />
     </Routes>
   );
 }
