@@ -1,5 +1,5 @@
 import React from "react";
-import { Select, SelectItem, Card, CardBody } from "@heroui/react";
+import { Select, SelectItem, Card, CardBody, CardHeader, CardFooter, Image, Button } from "@heroui/react";
 import { ProductCard, Product } from "../../components/product-card"
 import DefaultLayout from "@/layouts/default";
 
@@ -76,7 +76,7 @@ export default function ShopPage() {
             <div className="p-8 max-w-7xl mx-auto">
                 <Card className="mb-6">
                     <CardBody>
-                        <div className="flex justify-between items-center">
+                        <div className="flex justify-end items-center">
                             <div className="flex items-center gap-4">
                                 <span className="text-default-500">Sort by:</span>
                                 <Select
@@ -84,6 +84,8 @@ export default function ShopPage() {
                                     value={sortBy}
                                     onChange={(e) => setSortBy(e.target.value)}
                                     className="w-[200px]"
+                                    defaultSelectedKeys={[sortBy]}
+                                    aria-label="SortBy"
                                 >
                                     {Object.entries(SORT_OPTIONS).map(([val, label]) => (
                                         <SelectItem key={val}>
@@ -92,14 +94,11 @@ export default function ShopPage() {
                                     ))}
                                 </Select>
                             </div>
-                            <span className="text-default-500">
-                                {products.length} products found
-                            </span>
                         </div>
                     </CardBody>
                 </Card>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid lg:grid-cols-12 sm:grid-cols-8 gap-6">
                     {products.map((product) => (
                         <ProductCard key={product.id} {...product} />
                     ))}

@@ -1,6 +1,6 @@
 import React from "react";
-import { Card, CardBody, CardFooter, Button, Image } from "@heroui/react";
-import { Icon } from "@iconify/react";
+import { Card, CardFooter, Button, Image } from "@heroui/react";
+import { AddToShoppingCart } from "@icons";
 
 export interface Product {
   id: string;
@@ -9,38 +9,36 @@ export interface Product {
   imageUrl: string;
 }
 
-export const ProductCard = ({ name, price, imageUrl }: Product) => {
+export const ProductCard = ({ price, imageUrl }: Product) => {
   const [isAdding, setIsAdding] = React.useState(false);
 
   const handleAddToCart = () => {
     setIsAdding(true);
     setTimeout(() => {
       setIsAdding(false);
-    }, 1000);
+    }, 2000);
   };
 
   return (
-    <Card className="w-full" shadow="md">
-      <CardBody className="p-0">
-        <Image
-          alt={name}
-          className="w-full object-cover h-[200px]"
-          src={imageUrl}
-        />
-      </CardBody>
-      <CardFooter className="flex flex-col gap-2">
-        <div className="flex justify-between items-center w-full">
-          <h4 className="font-semibold text-large">{name}</h4>
-          <p className="text-default-500 text-large">${price.toFixed(2)}</p>
-        </div>
+    <Card className="col-span-12 sm:col-span-4 h-[300px]">
+      <Image
+        removeWrapper
+        alt="Card background"
+        className="z-0 w-full h-full object-cover"
+        src={imageUrl}
+      />
+      <CardFooter className="flex justify-between overflow-hidden py-1 absolute bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
+        <h1 className="text-white/100">${price.toFixed(2)}</h1>
         <Button
-          fullWidth
-          color="primary"
-          startContent={<Icon icon="lucide:shopping-cart" />}
-          isLoading={isAdding}
+          className="text-white bg-primary/80"
+          color="default"
+          radius="sm"
+          size="sm"
+          variant="flat"
           onPress={handleAddToCart}
+          isLoading={isAdding}
         >
-          Add to Cart
+          <AddToShoppingCart /> Add to Cart
         </Button>
       </CardFooter>
     </Card>
